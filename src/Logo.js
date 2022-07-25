@@ -4,6 +4,9 @@ import { Image } from '@chakra-ui/react';
 
 export const Logo = props => {
   return (
-    <Image src="https://res.cloudinary.com/ebenofere/image/upload/v1658763433/libcart-books-images/atomic-habits-james-clear_pqx3ro.jpg" />
+    <Image
+      src="https://res.cloudinary.com/ebenofere/image/upload/v1658791272/libcart-books-images/libcart-logo_y1kari.png"
+      w="120px"
+    />
   );
 };

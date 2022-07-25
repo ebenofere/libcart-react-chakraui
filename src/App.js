@@ -10,6 +10,7 @@ import {
 } from '@chakra-ui/react';
 import { bookList } from './store';
 import Books from './Books';
+import { Logo } from './Logo';
 
 function App() {
   return (
@@ -19,19 +20,19 @@ function App() {
       gridTemplateColumns={'150px 1fr'}
       h="500px"
       gap="1"
-      color="blackAlpha.700"
-      fontWeight="bold"
+      // color="blackAlpha.700"
+      // fontWeight="bold"
     >
-      <GridItem pl="2" bg="orange.300" area={'header'}>
-        Header
+      <GridItem bg="#ffffff" area={'header'} boxShadow="lg">
+        <Logo />
       </GridItem>
-      <GridItem pl="2" bg="pink.300" area={'nav'}>
+      <GridItem bg="#f6f6f6" area={'nav'}>
         Nav
       </GridItem>
-      <GridItem pl="2" bg="green.300" area={'main'}>
+      <GridItem bg="#ffffff" area={'main'}>
         <Books items={bookList} />
       </GridItem>
-      <GridItem pl="2" bg="blue.300" area={'footer'}>
+      <GridItem bg="blue.300" area={'footer'}>
         Footer
       </GridItem>
     </Grid>
