@@ -1,3 +1,5 @@
+import { MdCheckCircle } from 'react-icons/md';
+
 export const bookList = [
   {
     id: 'e1',
@@ -83,4 +85,18 @@ export const bookList = [
     itemDescription:
       "The ultimate hustle is to move freely between the street and corporate worlds, to find your flow and never stay locked in the same position. This is a manifesto for how to operate in the twenty-first century, where everything has been turned on its head. Building on the runaway success of Robert Greene's The 48 Laws of Power (almost five million copies sold), the 'modern Machiavelli' teams up with rapper 50 Cent to show how the power game of success can be played to your advantage. Drawing on the lore of gangsters, hustlers, and hip-hop artists, as well as 50 Cent's business and artistic dealings, the authors present the 'Laws of 50', revealing how to become a master strategist and supreme realist. Success comes from seeking an advantage in each and every encounter, and The 50th Law offers indispensable advice on how to win in business - and in life.",
   },
+];
+
+export const sideNavItemList_one = [
+  { id: 1, itemIcon: 'MdCheckCircle', navItemList: 'Library' },
+  { id: 2, itemIcon: 'MdCheckCircle', navItemList: 'Add Items' },
+  { id: 3, itemIcon: 'MdCheckCircle', navItemList: 'Add Collection' },
+  { id: 4, itemIcon: 'MdCheckCircle', navItemList: 'Publish' },
+  { id: 5, itemIcon: 'MdCheckCircle', navItemList: 'Dashboards' },
+];
+
+export const sideNavItemList_two = [
+  { id: 'sil01', navItemList: 'Settings' },
+  { id: 'sil02', navItemList: 'Support' },
+  { id: 'sil03', navItemList: 'Logout' },
 ];

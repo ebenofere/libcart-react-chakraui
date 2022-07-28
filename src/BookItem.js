@@ -16,13 +16,13 @@ const BookItem = ({ items }) => {
   return (
     <Stack>
       {items.map(item => (
-        <Box w="100%" p={4}>
+        <Box w="100%" p={4} style={{ border: '1px solid black' }}>
           <Box display="flex">
             <Box>
               <Image
                 src={item.itemImage}
                 alt={item.itemName}
-                boxSize="320px"
+                boxSize="300px"
                 objectFit="cover"
                 borderRadius="md"
               />
@@ -38,15 +38,15 @@ const BookItem = ({ items }) => {
               </Box>
             </Box>
             <Box>
-              <Box>{item.itemName}</Box>
-              <Box>{item.itemAuthor}</Box>
-              <Box display="flex">
+              <Box color="#03151E">{item.itemName}</Box>
+              <Box color="#03151E">{item.itemAuthor}</Box>
+              <Box color="#03151E" display="flex">
                 <Box>{item.itemPublishedYear}</Box>
                 <Box>Pages: {item.itemTotalPages}</Box>
                 <Box>{item.itemPublisher}</Box>
               </Box>
-              <Box>ISBN: {item.ISBN}</Box>
-              <Box>{item.itemDescription}</Box>
+              <Box color="#03151E">ISBN: {item.ISBN}</Box>
+              <Box color="#03151E">{item.itemDescription}</Box>
             </Box>
           </Box>
         </Box>
