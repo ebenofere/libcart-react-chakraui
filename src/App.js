@@ -8,10 +8,12 @@ import {
   Grid,
   GridItem,
 } from '@chakra-ui/react';
+
 import { bookList } from './store';
 import Books from './Books';
 import { Header } from './Header';
 import Navbar from './Nav/Navbar';
+import Footer from './Footer/Footer';
 import './App.css';
 
 function App() {
@@ -36,19 +38,10 @@ function App() {
         <Books items={bookList} />
       </GridItem>
       <GridItem bg="teal.500" area={'footer'}>
-        Footer
+        <Footer />
       </GridItem>
     </Grid>
   );
 }
 
 export default App;
-
-// <Box textAlign="center" fontSize="xl">
-//       <Grid minH="100vh" p={3}>
-//         <VStack spacing={8}>
-//           <Text>Welcome to Canada</Text>
-//           <Books items={bookList} />
-//         </VStack>
-//       </Grid>
-//     </Box>

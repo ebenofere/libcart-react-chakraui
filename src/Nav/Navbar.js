@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, List, ListIcon, ListItem, Image } from '@chakra-ui/react';
+import { Box, List, ListIcon, ListItem, Image, Flex } from '@chakra-ui/react';
 import { MdCheckCircle } from 'react-icons/md';
 
 import { sideNavItemList_one, sideNavItemList_two } from '../store';
@@ -17,8 +17,10 @@ const Navbar = () => {
         <List spacing={3}>
           {sideNavItemList_one.map(x => (
             <ListItem key={x.id}>
-              <ListIcon as={MdCheckCircle} color="teal.500" />
-              {x.navItemList}
+              <Flex alignItems="center">
+                <ListIcon as={MdCheckCircle} color="teal.500" />
+                {x.navItemList}
+              </Flex>
             </ListItem>
           ))}
         </List>
@@ -27,8 +29,10 @@ const Navbar = () => {
         <List spacing={3}>
           {sideNavItemList_two.map(x => (
             <ListItem key={x.id}>
-              <ListIcon as={MdCheckCircle} color="teal.500" />
-              {x.navItemList}
+              <Flex alignItems="center">
+                <ListIcon as={MdCheckCircle} color="teal.500" />
+                {x.navItemList}
+              </Flex>
             </ListItem>
           ))}
         </List>
