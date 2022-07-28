@@ -23,7 +23,7 @@ const Navbar = () => {
           ))}
         </List>
       </Box>
-      <Box color="black">
+      <Box color="black" mb={12}>
         <List spacing={3}>
           {sideNavItemList_two.map(x => (
             <ListItem key={x.id}>
@@ -32,6 +32,16 @@ const Navbar = () => {
             </ListItem>
           ))}
         </List>
+      </Box>
+      <Box
+        as="button"
+        borderRadius="md"
+        bg="teal.500"
+        color="white"
+        px={4}
+        h={8}
+      >
+        Upgrade
       </Box>
     </Box>
   );
