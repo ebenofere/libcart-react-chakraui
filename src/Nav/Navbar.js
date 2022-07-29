@@ -34,8 +34,10 @@ const Navbar = () => {
         <List spacing={3}>
           <ListItem>
             <Flex alignItems="center">
-              <ListIcon as={MdLibraryBooks} color="teal.500" />
-              Library
+              <Link to="/">
+                <ListIcon as={MdLibraryBooks} color="teal.500" />
+                Library
+              </Link>
             </Flex>
           </ListItem>
           <ListItem>
