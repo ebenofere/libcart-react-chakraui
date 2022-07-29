@@ -19,8 +19,7 @@ import {
   MdLiveHelp,
   MdExitToApp,
 } from 'react-icons/md';
-
-import { sideNavItemList_one, sideNavItemList_two } from '../store';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
@@ -59,8 +58,10 @@ const Navbar = () => {
           </ListItem>
           <ListItem>
             <Flex alignItems="center">
-              <ListIcon as={MdDashboard} color="teal.500" />
-              Dashboards
+              <Link to="/dashboard">
+                <ListIcon as={MdDashboard} color="teal.500" />
+                Dashboard
+              </Link>
             </Flex>
           </ListItem>
         </List>

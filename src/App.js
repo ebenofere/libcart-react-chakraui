@@ -1,19 +1,13 @@
 import React from 'react';
-import {
-  Box,
-  Text,
-  Link,
-  VStack,
-  Code,
-  Grid,
-  GridItem,
-} from '@chakra-ui/react';
+import { Box, Text, Link, VStack, Grid, GridItem } from '@chakra-ui/react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import { bookList } from './store';
-import Books from './Books';
+import Home from './components/Home/Books';
 import { Header } from './Header';
 import Navbar from './Nav/Navbar';
 import Footer from './Footer/Footer';
+import Dashboard from './components/Dashboard/Dashboard';
 import './App.css';
 
 function App() {
@@ -35,7 +29,12 @@ function App() {
         <Navbar />
       </GridItem>
       <GridItem bg="white" area={'main'} p={10}>
-        <Books items={bookList} />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Home items={bookList} />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </BrowserRouter>
       </GridItem>
       <GridItem bg="teal.500" area={'footer'}>
         <Footer />
