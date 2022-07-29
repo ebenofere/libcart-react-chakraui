@@ -3,10 +3,11 @@ import { Box, Text, Link, VStack, Grid, GridItem } from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
 
 import { bookList } from './store';
-import Books from './components/Home/Books';
 import { Header } from './Header';
 import Navbar from './Nav/Navbar';
 import Footer from './Footer/Footer';
+import Books from './components/Home/Books';
+import AddItems from './components/AddItems/AddItems';
 import Dashboard from './components/Dashboard/Dashboard';
 import Whoops404 from './components/Whoops404';
 import './App.css';
@@ -20,8 +21,10 @@ function App() {
     setSearchField(e.target.value);
   };
 
-  const filteredBooks = books.filter(x =>
-    x.itemName.toLowerCase().includes(searchField.toLowerCase())
+  const filteredBooks = books.filter(
+    x =>
+      x.itemName.toLowerCase().includes(searchField.toLowerCase()) ||
+      x.itemAuthor.toLowerCase().includes(searchField.toLowerCase())
   );
 
   return (
@@ -47,6 +50,7 @@ function App() {
               <Books items={filteredBooks} handleChange={handleChange} />
             }
           />
+          <Route path="/additems" element={<AddItems />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<Whoops404 />} />
         </Routes>

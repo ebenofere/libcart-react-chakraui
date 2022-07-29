@@ -9,7 +9,6 @@ import {
   Text,
 } from '@chakra-ui/react';
 import {
-  MdCheckCircle,
   MdAddCircle,
   MdLibraryBooks,
   MdSend,
@@ -42,8 +41,10 @@ const Navbar = () => {
           </ListItem>
           <ListItem>
             <Flex alignItems="center">
-              <ListIcon as={MdAddCircle} color="teal.500" />
-              Add Items
+              <Link to="/additems">
+                <ListIcon as={MdAddCircle} color="teal.500" />
+                Add Items
+              </Link>
             </Flex>
           </ListItem>
           <ListItem>
