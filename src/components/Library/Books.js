@@ -10,27 +10,16 @@ import {
   Spacer,
   Icon,
 } from '@chakra-ui/react';
+import { MdAccountCircle } from 'react-icons/md';
+
 import BookList from './BookList';
 import SearchBox from '../SearchBox/SearchBox';
-import { MdAccountCircle } from 'react-icons/md';
+import ContainerHeader from '../ContainerHeader';
 
 const Books = ({ items, handleChange }) => {
   return (
     <>
-      <Box mb={8}>
-        <Flex align="center">
-          <Box>
-            <Text fontSize="4xl">Library</Text>
-          </Box>
-          <Spacer />
-          <Box>
-            <Flex align="center">
-              <Text mr={4}>Welcome, Eben</Text>
-              <Icon as={MdAccountCircle} w={12} h={12} color="teal.500" />
-            </Flex>
-          </Box>
-        </Flex>
-      </Box>
+      <ContainerHeader pageTitle="Library" />
       <Box mb={8}>
         <Text as="b" fontSize="xl">
           Search for Books

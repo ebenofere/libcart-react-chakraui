@@ -1,11 +1,12 @@
 import React from 'react';
 import { Text, Box } from '@chakra-ui/react';
+import ContainerHeader from '../ContainerHeader';
 
 const Dashboard = () => {
   return (
-    <Box>
-      <Text>Let's go there!</Text>
-    </Box>
+    <>
+      <ContainerHeader pageTitle="Dashboard" />
+    </>
   );
 };
 

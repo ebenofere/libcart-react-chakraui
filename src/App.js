@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
-import { Box, Text, Link, VStack, Grid, GridItem } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  Link,
+  VStack,
+  Grid,
+  GridItem,
+  Input,
+  Button,
+  Flex,
+  Spacer,
+  Icon,
+} from '@chakra-ui/react';
 import { Routes, Route } from 'react-router-dom';
+import { MdAccountCircle } from 'react-icons/md';
 
 import { bookList } from './store';
 import { Header } from './Header';
