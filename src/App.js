@@ -4,9 +4,9 @@ import { Routes, Route } from 'react-router-dom';
 
 import { bookList } from './store';
 import { Header } from './Header';
-import Navbar from './Nav/Navbar';
-import Footer from './Footer/Footer';
-import Books from './components/Home/Books';
+import Navbar from './components/Nav/Navbar';
+import Footer from './components/Footer/Footer';
+import Books from './components/Library/Books';
 import AddItems from './components/AddItems/AddItems';
 import Dashboard from './components/Dashboard/Dashboard';
 import Whoops404 from './components/Whoops404';

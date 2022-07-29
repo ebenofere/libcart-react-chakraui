@@ -45,13 +45,13 @@ const BookItem = ({ items }) => {
             </Box>
             <Box flex="4">
               <Flex direction="column">
-                <Text as="b" fontSize="2xl" color="#03151E">
+                <Text as="b" fontSize="2xl">
                   {item.itemName}
                 </Text>
-                <Text fontSize="lg" color="#999999" mb={4}>
+                <Text fontSize="md" color="#999999" mb={4}>
                   {item.itemAuthor}
                 </Text>
-                <Box color="#03151E" display="flex">
+                <Box display="flex">
                   <Text as="b" mr={4}>
                     {item.itemPublishedYear}
                   </Text>
@@ -60,10 +60,10 @@ const BookItem = ({ items }) => {
                   </Text>
                   <Text>({item.itemPublisher})</Text>
                 </Box>
-                <Text color="#03151E" mb={4}>
+                <Text mb={4}>
                   <strong>ISBN13: </strong> {item.ISBN}
                 </Text>
-                <Box color="#03151E">{item.itemDescription}</Box>
+                <Box>{item.itemDescription}</Box>
               </Flex>
             </Box>
           </Flex>

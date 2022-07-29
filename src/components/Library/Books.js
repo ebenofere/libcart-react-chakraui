@@ -1,13 +1,38 @@
 import React from 'react';
-import { Box, Text, Link, VStack, Input, Button, Flex } from '@chakra-ui/react';
+import {
+  Box,
+  Text,
+  Link,
+  VStack,
+  Input,
+  Button,
+  Flex,
+  Spacer,
+  Icon,
+} from '@chakra-ui/react';
 import BookList from './BookList';
 import SearchBox from '../SearchBox/SearchBox';
+import { MdAccountCircle } from 'react-icons/md';
 
 const Books = ({ items, handleChange }) => {
   return (
     <>
       <Box mb={8}>
-        <Text as="b" fontSize="xl" color="#03151E">
+        <Flex align="center">
+          <Box>
+            <Text fontSize="4xl">Library</Text>
+          </Box>
+          <Spacer />
+          <Box>
+            <Flex align="center">
+              <Text mr={4}>Welcome, Eben</Text>
+              <Icon as={MdAccountCircle} w={12} h={12} color="teal.500" />
+            </Flex>
+          </Box>
+        </Flex>
+      </Box>
+      <Box mb={8}>
+        <Text as="b" fontSize="xl">
           Search for Books
         </Text>
         <Box mt={4}>
@@ -22,7 +47,7 @@ const Books = ({ items, handleChange }) => {
           </Flex>
         </Box>
       </Box>
-      <Text as="b" fontSize="4xl" color="#03151E">
+      <Text as="b" fontSize="3xl" color="#03151E">
         Results
       </Text>
       <BookList items={items} />

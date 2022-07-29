@@ -32,40 +32,44 @@ const Navbar = () => {
       <Box color="black" mb={12}>
         <List spacing={3}>
           <ListItem>
-            <Flex alignItems="center">
-              <Link to="/">
+            <Link to="/">
+              <Flex alignItems="center">
                 <ListIcon as={MdLibraryBooks} color="teal.500" />
                 Library
-              </Link>
-            </Flex>
+              </Flex>
+            </Link>
           </ListItem>
           <ListItem>
-            <Flex alignItems="center">
-              <Link to="/additems">
+            <Link to="/additems">
+              <Flex alignItems="center">
                 <ListIcon as={MdAddCircle} color="teal.500" />
                 Add Items
-              </Link>
-            </Flex>
+              </Flex>
+            </Link>
           </ListItem>
           <ListItem>
-            <Flex alignItems="center">
-              <ListIcon as={MdLibraryAdd} color="teal.500" />
-              Add Collection
-            </Flex>
+            <Link to="">
+              <Flex alignItems="center">
+                <ListIcon as={MdLibraryAdd} color="teal.500" />
+                Add Collection
+              </Flex>
+            </Link>
           </ListItem>
           <ListItem>
-            <Flex alignItems="center">
-              <ListIcon as={MdSend} color="teal.500" />
-              Publish
-            </Flex>
+            <Link to="">
+              <Flex alignItems="center">
+                <ListIcon as={MdSend} color="teal.500" />
+                Publish
+              </Flex>
+            </Link>
           </ListItem>
           <ListItem>
-            <Flex alignItems="center">
-              <Link to="/dashboard">
+            <Link to="/dashboard">
+              <Flex alignItems="center">
                 <ListIcon as={MdDashboard} color="teal.500" />
                 Dashboard
-              </Link>
-            </Flex>
+              </Flex>
+            </Link>
           </ListItem>
         </List>
       </Box>

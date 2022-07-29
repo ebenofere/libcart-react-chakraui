@@ -1,7 +1,8 @@
 import React from 'react';
+import { Box } from '@chakra-ui/react';
 
 const AddItems = () => {
-  return <div>AddItems</div>;
+  return <Box>AddItems</Box>;
 };
 
 export default AddItems;
