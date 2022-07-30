@@ -9,6 +9,8 @@ import {
   Flex,
   Spacer,
   Icon,
+  Heading,
+  Container,
 } from '@chakra-ui/react';
 import { MdAccountCircle } from 'react-icons/md';
 
@@ -19,10 +21,10 @@ import ButtonBar from '../ButtonBar';
 
 const Books = ({ items, handleChange }) => {
   return (
-    <>
-      <ContainerHeader pageTitle="Library" />
+    <Container maxW="6xl" bg="white">
+      <ContainerHeader pageTitle="Library" tabOne="" />
       <Box mb={8}>
-        <Text as="b" fontSize="xl">
+        <Text fontWeight="600" fontSize="xl">
           Search for Books
         </Text>
         <Box mt={4}>
@@ -37,11 +39,11 @@ const Books = ({ items, handleChange }) => {
           </Flex>
         </Box>
       </Box>
-      <Text as="b" fontSize="3xl" color="#03151E">
+      <Heading fontWeight="600" fontSize="3xl" mb={2} color="#03151E">
         Results
-      </Text>
+      </Heading>
       <BookList items={items} />
-    </>
+    </Container>
   );
 };
 

@@ -37,7 +37,7 @@ const BookItem = ({ items }) => {
             </Box>
             <Box flex="4">
               <Flex direction="column">
-                <Text as="b" fontSize="2xl">
+                <Text fontWeight="600" fontSize="2xl">
                   {item.itemName}
                 </Text>
                 <Text fontSize="md" color="#999999" mb={4}>

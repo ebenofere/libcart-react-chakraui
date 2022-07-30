@@ -12,6 +12,7 @@ import {
   Spacer,
   Text,
   Button,
+  Container,
 } from '@chakra-ui/react';
 import { MdCloudUpload } from 'react-icons/md';
 
@@ -19,8 +20,8 @@ import ContainerHeader from '../ContainerHeader';
 
 const AddItems = () => {
   return (
-    <>
-      <ContainerHeader pageTitle="Add Items" />
+    <Container maxW="6xl" bg="white">
+      <ContainerHeader pageTitle="Add Items" tabOne="Search" />
       <Box>
         <Flex>
           <Grid templateColumns="repeat(2, 1fr)" gap={6}>
@@ -85,7 +86,7 @@ const AddItems = () => {
           </Box>
         </Flex>
       </Box>
-    </>
+    </Container>
   );
 };
 

@@ -42,16 +42,16 @@ function App() {
 
   return (
     <Grid
-      templateAreas={`"nav header" "nav main" "nav footer"`}
+      templateAreas={`"nav main" "nav main" "nav footer"`}
       gridTemplateRows={'50px 1fr 30px'}
       gridTemplateColumns={'1fr 5fr'}
-      h="500px"
+      // h="500px"
       gap="1"
       className="body-wrapper"
     >
-      <GridItem bg="white" area={'header'} boxShadow="lg">
+      {/* <GridItem bg="white" area={'header'} boxShadow="lg">
         <Header />
-      </GridItem>
+      </GridItem> */}
       <GridItem bg="#f6f6f6" area={'nav'}>
         <Navbar />
       </GridItem>
