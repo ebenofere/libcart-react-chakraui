@@ -11,6 +11,7 @@ import {
   Flex,
   Divider,
 } from '@chakra-ui/react';
+import ButtonBar from '../ButtonBar';
 
 const BookItem = ({ items }) => {
   console.log(items, 'items');
@@ -31,16 +32,7 @@ const BookItem = ({ items }) => {
                     borderRadius="md"
                   />
                 </Box>
-                <Box
-                  as="button"
-                  borderRadius="md"
-                  bg="teal.500"
-                  color="white"
-                  px={4}
-                  h={8}
-                >
-                  Add Item
-                </Box>
+                <ButtonBar btnTitle="Add Item" />
               </Flex>
             </Box>
             <Box flex="4">

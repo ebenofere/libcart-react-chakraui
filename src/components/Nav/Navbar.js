@@ -20,6 +20,8 @@ import {
 } from 'react-icons/md';
 import { Link } from 'react-router-dom';
 
+import ButtonBar from '../ButtonBar';
+
 const Navbar = () => {
   return (
     <Box ml={8}>
@@ -95,16 +97,7 @@ const Navbar = () => {
           </ListItem>
         </List>
       </Box>
-      <Box
-        as="button"
-        borderRadius="md"
-        bg="teal.500"
-        color="white"
-        px={4}
-        h={8}
-      >
-        Upgrade
-      </Box>
+      <ButtonBar btnTitle="Upgrade" />
     </Box>
   );
 };

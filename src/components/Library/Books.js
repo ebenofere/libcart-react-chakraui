@@ -15,6 +15,7 @@ import { MdAccountCircle } from 'react-icons/md';
 import BookList from './BookList';
 import SearchBox from '../SearchBox/SearchBox';
 import ContainerHeader from '../ContainerHeader';
+import ButtonBar from '../ButtonBar';
 
 const Books = ({ items, handleChange }) => {
   return (
@@ -30,9 +31,9 @@ const Books = ({ items, handleChange }) => {
             <Text as="em" fontSize="xs" color="#999999" mt={2}>
               Search by title or author
             </Text>
-            <Button mt={4} width="10%" color="white" bg="teal.500">
-              Search
-            </Button>
+            <Box mt={4}>
+              <ButtonBar btnTitle="Search" />
+            </Box>
           </Flex>
         </Box>
       </Box>
