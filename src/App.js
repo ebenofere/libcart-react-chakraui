@@ -15,7 +15,7 @@ import {
 import { Routes, Route } from 'react-router-dom';
 import { MdAccountCircle } from 'react-icons/md';
 
-import { bookList } from './store';
+import { bookList, booksNoEachMonth } from './store';
 import { Header } from './Header';
 import Navbar from './components/Nav/Navbar';
 import Footer from './components/Footer/Footer';
@@ -64,7 +64,15 @@ function App() {
             }
           />
           <Route path="/additems" element={<AddItems />} />
-          <Route path="/dashboard" element={<Dashboard />} />
+          <Route
+            path="/dashboard"
+            element={
+              <Dashboard
+                noOfItems={books.length}
+                booksNoEachMonth={booksNoEachMonth}
+              />
+            }
+          />
           <Route path="*" element={<Whoops404 />} />
         </Routes>
       </GridItem>

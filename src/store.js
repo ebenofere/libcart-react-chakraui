@@ -1,5 +1,3 @@
-import { MdCheckCircle } from 'react-icons/md';
-
 export const bookList = [
   {
     id: 'e1',
@@ -84,5 +82,68 @@ export const bookList = [
       'https://res.cloudinary.com/ebenofere/image/upload/v1658776886/libcart-books-images/50th_law_n2ewpe.jpg',
     itemDescription:
       "The ultimate hustle is to move freely between the street and corporate worlds, to find your flow and never stay locked in the same position. This is a manifesto for how to operate in the twenty-first century, where everything has been turned on its head. Building on the runaway success of Robert Greene's The 48 Laws of Power (almost five million copies sold), the 'modern Machiavelli' teams up with rapper 50 Cent to show how the power game of success can be played to your advantage. Drawing on the lore of gangsters, hustlers, and hip-hop artists, as well as 50 Cent's business and artistic dealings, the authors present the 'Laws of 50', revealing how to become a master strategist and supreme realist. Success comes from seeking an advantage in each and every encounter, and The 50th Law offers indispensable advice on how to win in business - and in life.",
+  },
+];
+
+export const booksNoEachMonth = [
+  {
+    id: 'b01',
+    month: 'Jan',
+    totalBooks: 12,
+  },
+  {
+    id: 'b02',
+    month: 'Feb',
+    totalBooks: 6,
+  },
+  {
+    id: 'b03',
+    month: 'Mar',
+    totalBooks: 20,
+  },
+  {
+    id: 'b04',
+    month: 'Apr',
+    totalBooks: 32,
+  },
+  {
+    id: 'b05',
+    month: 'May',
+    totalBooks: 12,
+  },
+  {
+    id: 'b06',
+    month: 'Jun',
+    totalBooks: 31,
+  },
+  {
+    id: 'b07',
+    month: 'Jul',
+    totalBooks: 20,
+  },
+  {
+    id: 'b08',
+    month: 'Aug',
+    totalBooks: 6,
+  },
+  {
+    id: 'b09',
+    month: 'Sep',
+    totalBooks: 9,
+  },
+  {
+    id: 'b10',
+    month: 'Oct',
+    totalBooks: 17,
+  },
+  {
+    id: 'b11',
+    month: 'Nov',
+    totalBooks: 21,
+  },
+  {
+    id: 'b12',
+    month: 'Dec',
+    totalBooks: 35,
   },
 ];

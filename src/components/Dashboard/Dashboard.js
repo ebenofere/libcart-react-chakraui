@@ -11,14 +11,17 @@ import {
 import { MdArrowDropDown } from 'react-icons/md';
 
 import ContainerHeader from '../ContainerHeader';
+import PaperBoard from './PaperBoard';
+import SimpleChart from './SimpleChart';
+import TinyBarChart from './TinyBarChart';
 
-const Dashboard = () => {
+const Dashboard = ({ noOfItems, booksNoEachMonth }) => {
   return (
-    <Container maxW="6xl" bg="gray.100">
+    <Container maxW="6xl" pb={12} bg="gray.100">
       <ContainerHeader pageTitle="Dashboard" tabOne="Basic Stats" />
       <Box>
-        <Flex gap={2} style={{ border: '1px solid black' }}>
-          <Box>
+        <Flex gap={12} mb={8}>
+          <Box flex="1" w="50%">
             <Select
               icon={<MdArrowDropDown />}
               placeholder="All Collections"
@@ -30,26 +33,19 @@ const Dashboard = () => {
               Choose the collection you want stats for.
             </Text>
           </Box>
-          {/* <Box></Box> */}
+          <Box flex="1" w="50%"></Box>
         </Flex>
       </Box>
       <Box>
-        <Flex color="white" gap={12}>
-          <Box flex="1" bg="white" borderRadius="lg" px={4} h="120px" w="100%">
-            <Center>
-              <Flex direction="column" align="center" gap={4} mt={4}>
-                <Text fontWeight="600" fontSize="lg">
-                  Total Unique Items
-                </Text>
-                <Text fontWeight="600" fontSize="3xl">
-                  4
-                </Text>
-              </Flex>
-            </Center>
-          </Box>
-          <Box flex="1" bg="tomato">
-            <Text>Total Unique Items</Text>
-          </Box>
+        <Flex gap={12} mb={8}>
+          <PaperBoard noOfItems={noOfItems} />
+          <PaperBoard noOfItems={noOfItems} />
+        </Flex>
+      </Box>
+      <Box>
+        <Flex gap={12}>
+          <SimpleChart booksNoEachMonth={booksNoEachMonth} />
+          <TinyBarChart booksNoEachMonth={booksNoEachMonth} />
         </Flex>
       </Box>
     </Container>
