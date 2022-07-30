@@ -22,7 +22,7 @@ const AddItems = () => {
   return (
     <Container maxW="6xl" bg="white">
       <ContainerHeader pageTitle="Add Items" tabOne="Search" />
-      <Box>
+      <Box mb={8}>
         <Flex>
           <Grid templateColumns="repeat(2, 1fr)" gap={6}>
             <GridItem>
@@ -65,7 +65,7 @@ const AddItems = () => {
           </Grid>
           <Spacer />
           <Box>
-            <Flex direction="column">
+            <Flex direction="column" justifyContent="flex-end">
               <Image
                 src="gibbresh.png"
                 fallbackSrc="https://via.placeholder.com/150"
@@ -78,7 +78,6 @@ const AddItems = () => {
                 colorScheme="teal"
                 variant="solid"
                 width="50%"
-                // justifyContent="right"
               >
                 Upload
               </Button>

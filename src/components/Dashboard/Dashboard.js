@@ -17,7 +17,7 @@ import TinyBarChart from './TinyBarChart';
 
 const Dashboard = ({ noOfItems, booksNoEachMonth }) => {
   return (
-    <Container maxW="6xl" pb={12} bg="gray.100">
+    <Container maxW="6xl" pb={12}>
       <ContainerHeader pageTitle="Dashboard" tabOne="Basic Stats" />
       <Box>
         <Flex gap={12} mb={8}>

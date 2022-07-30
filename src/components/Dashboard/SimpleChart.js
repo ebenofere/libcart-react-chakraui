@@ -27,6 +27,8 @@ const SimpleChart = ({ booksNoEachMonth }) => {
       color="lightblue"
       height="270px"
       width="180px"
+      boxShadow="xs"
+      rounded="md"
       // style={{ border: '1px solid black' }}
     >
       <Box>

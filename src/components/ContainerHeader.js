@@ -34,9 +34,9 @@ const ContainerHeader = ({ pageTitle, tabOne }) => {
         </Box>
       </Flex>
       <Box>
-        <Text fontWeight="600" fontSize="2xl">
+        {/* <Text fontWeight="600" fontSize="2xl">
           {tabOne}
-        </Text>
+        </Text> */}
         <Divider orientation="horizontal" color="black" mt={2} />
       </Box>
 

@@ -11,7 +11,15 @@ import {
 
 const PaperBoard = ({ noOfItems }) => {
   return (
-    <Box flex="1" bg="white" borderRadius="lg" px={4} h="120px" w="100%">
+    <Box
+      flex="1"
+      bg="white"
+      boxShadow="base"
+      borderRadius="lg"
+      px={4}
+      h="120px"
+      w="100%"
+    >
       <Center>
         <Flex direction="column" align="center" gap={4} mt={4}>
           <Text fontWeight="600" fontSize="lg">
