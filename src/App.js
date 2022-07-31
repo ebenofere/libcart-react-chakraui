@@ -6,6 +6,7 @@ import { bookList, booksNoEachMonth } from './store';
 import { Header } from './Header';
 import Navbar from './components/Nav/Navbar';
 import Footer from './components/Footer/Footer';
+import Home from './components/Home/home';
 import Books from './components/Library/Books';
 import AddItems from './components/AddItems/AddItems';
 import Dashboard from './components/Dashboard/Dashboard';
@@ -57,6 +58,7 @@ function App() {
       </GridItem>
       <GridItem bg="white" area={'main'} p={10}>
         <Routes>
+          <Route path="/" element={<Home />} />
           <Route
             path="/library"
             element={

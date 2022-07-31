@@ -1,12 +1,12 @@
 import React from 'react';
 import { Box, Button } from '@chakra-ui/react';
 
-const ButtonBar = ({ btnTitle, whatToDo }) => {
+const ButtonBar = ({ btnTitle, bgBtnColor, whatToDo }) => {
   return (
     <Button
       as="button"
       borderRadius="md"
-      bg="teal.500"
+      bg={bgBtnColor}
       color="white"
       px={4}
       h={8}

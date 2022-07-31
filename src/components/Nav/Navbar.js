@@ -25,12 +25,14 @@ import ButtonBar from '../ButtonBar';
 const Navbar = () => {
   return (
     <Box ml={8}>
-      <Image
-        src="https://res.cloudinary.com/ebenofere/image/upload/v1658791272/libcart-books-images/libcart-logo_y1kari.png"
-        w="120px"
-        mb={12}
-        mt={5}
-      />
+      <Link to="/">
+        <Image
+          src="https://res.cloudinary.com/ebenofere/image/upload/v1658791272/libcart-books-images/libcart-logo_y1kari.png"
+          w="120px"
+          mb={12}
+          mt={5}
+        />
+      </Link>
       <Box color="black" mb={12}>
         <List spacing={3}>
           <ListItem>
@@ -97,7 +99,7 @@ const Navbar = () => {
           </ListItem>
         </List>
       </Box>
-      <ButtonBar btnTitle="Upgrade" />
+      <ButtonBar btnTitle="Upgrade" bgBtnColor="teal.500" />
     </Box>
   );
 };

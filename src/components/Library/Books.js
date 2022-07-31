@@ -34,7 +34,7 @@ const Books = ({ items, handleChange }) => {
               Search by title or author
             </Text>
             <Box mt={4}>
-              <ButtonBar btnTitle="Search" />
+              <ButtonBar btnTitle="Search" bgBtnColor="teal.500" />
             </Box>
           </Flex>
         </Box>

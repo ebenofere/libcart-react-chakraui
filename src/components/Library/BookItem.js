@@ -43,7 +43,8 @@ const BookItem = ({ items }) => {
                     borderRadius="md"
                   />
                 </Box>
-                <ButtonBar btnTitle="Add Item" />
+                <ButtonBar btnTitle="Delete Item" bgBtnColor="#DF6C5E" />
+                <ButtonBar btnTitle="View/Edit Item" bgBtnColor="teal.500" />
               </Flex>
             </Box>
             <Box flex="4">

@@ -126,7 +126,11 @@ const NewItem = ({ onSubmitBookItem }) => {
               placeholder="Write description here..."
               onChange={descriptionChangeHandler}
             />
-            <ButtonBar btnTitle="Add Book" whatToDo={submitHandler} />
+            <ButtonBar
+              btnTitle="Add Book"
+              bgBtnColor="teal.500"
+              whatToDo={submitHandler}
+            />
           </Flex>
         </Grid>
         <Spacer />
