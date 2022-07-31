@@ -1,19 +1,6 @@
 import React, { useState } from 'react';
-import {
-  Box,
-  Text,
-  Link,
-  VStack,
-  Grid,
-  GridItem,
-  Input,
-  Button,
-  Flex,
-  Spacer,
-  Icon,
-} from '@chakra-ui/react';
-import { Routes, Route } from 'react-router-dom';
-import { MdAccountCircle } from 'react-icons/md';
+import { Grid, GridItem } from '@chakra-ui/react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { bookList, booksNoEachMonth } from './store';
 import { Header } from './Header';
@@ -28,6 +15,19 @@ import './App.css';
 function App() {
   const [books, setBooks] = useState(bookList);
   const [searchField, setSearchField] = useState('');
+
+  const navigate = useNavigate();
+
+  const addItemHandler = newItem => {
+    console.log(newItem, 'newItem');
+    setBooks(prevBooks => {
+      return [newItem, ...prevBooks];
+    });
+
+    setTimeout(() => {
+      navigate('/');
+    }, 500);
+  };
 
   const handleChange = e => {
     console.log(e.target.value);
@@ -58,12 +58,15 @@ function App() {
       <GridItem bg="white" area={'main'} p={10}>
         <Routes>
           <Route
-            path="/"
+            path="/library"
             element={
               <Books items={filteredBooks} handleChange={handleChange} />
             }
           />
-          <Route path="/additems" element={<AddItems />} />
+          <Route
+            path="/library/additems"
+            element={<AddItems onAddBookItem={addItemHandler} />}
+          />
           <Route
             path="/dashboard"
             element={

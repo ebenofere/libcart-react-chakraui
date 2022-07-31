@@ -34,7 +34,7 @@ const Navbar = () => {
       <Box color="black" mb={12}>
         <List spacing={3}>
           <ListItem>
-            <Link to="/">
+            <Link to="/library">
               <Flex alignItems="center">
                 <ListIcon as={MdLibraryBooks} color="teal.500" />
                 Library
@@ -42,7 +42,7 @@ const Navbar = () => {
             </Link>
           </ListItem>
           <ListItem>
-            <Link to="/additems">
+            <Link to="/library/additems">
               <Flex alignItems="center">
                 <ListIcon as={MdAddCircle} color="teal.500" />
                 Add Items

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Box,
   Input,
@@ -17,74 +17,24 @@ import {
 import { MdCloudUpload } from 'react-icons/md';
 
 import ContainerHeader from '../ContainerHeader';
+import ButtonBar from '../ButtonBar';
+import NewItem from './NewItem';
 
-const AddItems = () => {
+const AddItems = ({ onAddBookItem }) => {
+  const submitBookItemHandler = enteredBookData => {
+    console.log(enteredBookData, 'enteredBookData');
+    const newItemData = {
+      ...enteredBookData,
+      id: Math.random().toString(),
+    };
+
+    onAddBookItem(newItemData);
+  };
+
   return (
     <Container maxW="6xl" bg="white">
       <ContainerHeader pageTitle="Add Items" tabOne="Search" />
-      <Box mb={8}>
-        <Flex>
-          <Grid templateColumns="repeat(2, 1fr)" gap={6}>
-            <GridItem>
-              <FormControl>
-                <FormLabel>Title</FormLabel>
-                <Input />
-              </FormControl>
-            </GridItem>
-            <GridItem>
-              <FormControl>
-                <FormLabel>Author</FormLabel>
-                <Input />
-              </FormControl>
-            </GridItem>
-            <GridItem>
-              <FormControl>
-                <FormLabel>Year Published</FormLabel>
-                <Input />
-              </FormControl>
-            </GridItem>
-            <GridItem>
-              <FormControl>
-                <FormLabel>No. of Pages</FormLabel>
-                <Input />
-              </FormControl>
-            </GridItem>
-            <GridItem>
-              <FormControl>
-                <FormLabel>Publisher</FormLabel>
-                <Input />
-              </FormControl>
-            </GridItem>
-            <GridItem>
-              <FormControl>
-                <FormLabel>ISBN No.</FormLabel>
-                <Input />
-              </FormControl>
-            </GridItem>
-            <Textarea mt={8} placeholder="Write description here..." />
-          </Grid>
-          <Spacer />
-          <Box>
-            <Flex direction="column" justifyContent="flex-end">
-              <Image
-                src="gibbresh.png"
-                fallbackSrc="https://via.placeholder.com/150"
-                boxSize="300px"
-                objectFit="cover"
-                mb={4}
-              />
-              <Button
-                leftIcon={<MdCloudUpload />}
-                colorScheme="teal"
-                variant="solid"
-                width="50%"
-              >
-                Upload
-              </Button>
-            </Flex>
-          </Box>
-        </Flex>
-      </Box>
+      <NewItem onSubmitBookItem={submitBookItemHandler} />
     </Container>
   );
 };

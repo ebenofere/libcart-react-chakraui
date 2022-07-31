@@ -10,11 +10,22 @@ import {
   Image,
   Flex,
   Divider,
+  Center,
 } from '@chakra-ui/react';
 import ButtonBar from '../ButtonBar';
 
 const BookItem = ({ items }) => {
   console.log(items, 'items');
+
+  if (items.length === 0) {
+    return (
+      <Box px={4} h="120px" w="100%">
+        <Center>
+          <Text mt={12}>No books yet.</Text>
+        </Center>
+      </Box>
+    );
+  }
 
   return (
     <Box>
