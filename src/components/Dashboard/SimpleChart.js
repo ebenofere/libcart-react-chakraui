@@ -33,7 +33,9 @@ const SimpleChart = ({ booksNoEachMonth }) => {
     >
       <Box>
         <Flex align="center" justifyContent="space-between" mb={4}>
-          <Text fontWeight="600">Unique items added by rolling year</Text>
+          <Text fontWeight="600" ml={4}>
+            Unique items added by rolling year
+          </Text>
           <Menu>
             <MenuButton
               as={IconButton}

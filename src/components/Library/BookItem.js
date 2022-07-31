@@ -14,7 +14,7 @@ import {
 } from '@chakra-ui/react';
 import ButtonBar from '../ButtonBar';
 
-const BookItem = ({ items }) => {
+const BookItem = ({ items, onDelete }) => {
   console.log(items, 'items');
 
   if (items.length === 0) {
@@ -26,6 +26,10 @@ const BookItem = ({ items }) => {
       </Box>
     );
   }
+
+  const deleteItemHandler = props => {
+    onDelete(props.id);
+  };
 
   return (
     <Box>
@@ -43,7 +47,11 @@ const BookItem = ({ items }) => {
                     borderRadius="md"
                   />
                 </Box>
-                <ButtonBar btnTitle="Delete Item" bgBtnColor="#DF6C5E" />
+                <ButtonBar
+                  btnTitle="Delete Item"
+                  bgBtnColor="#DF6C5E"
+                  whatToDo={deleteItemHandler}
+                />
                 <ButtonBar btnTitle="View/Edit Item" bgBtnColor="teal.500" />
               </Flex>
             </Box>

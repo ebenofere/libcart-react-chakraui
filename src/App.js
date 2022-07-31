@@ -26,8 +26,18 @@ function App() {
     });
 
     setTimeout(() => {
-      navigate('/');
-    }, 500);
+      navigate('/library');
+    }, 1000);
+  };
+
+  const deleteItemHandler = deleteItemId => {
+    console.log(deleteItemId, 'deleteItemId');
+
+    setBooks(prevBooks => {
+      const updatedBooks = prevBooks.filter(x => x.id !== deleteItemId);
+
+      return updatedBooks;
+    });
   };
 
   const handleChange = e => {
@@ -62,7 +72,11 @@ function App() {
           <Route
             path="/library"
             element={
-              <Books items={filteredBooks} handleChange={handleChange} />
+              <Books
+                items={filteredBooks}
+                handleChange={handleChange}
+                onDeleteItem={deleteItemHandler}
+              />
             }
           />
           <Route

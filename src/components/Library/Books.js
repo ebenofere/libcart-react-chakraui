@@ -19,7 +19,7 @@ import SearchBox from '../SearchBox/SearchBox';
 import ContainerHeader from '../ContainerHeader';
 import ButtonBar from '../ButtonBar';
 
-const Books = ({ items, handleChange }) => {
+const Books = ({ items, handleChange, onDeleteItem }) => {
   return (
     <Container maxW="6xl" bg="white">
       <ContainerHeader pageTitle="Library" tabOne="" />
@@ -42,7 +42,7 @@ const Books = ({ items, handleChange }) => {
       <Heading fontWeight="600" fontSize="3xl" mb={2} color="#03151E">
         Results
       </Heading>
-      <BookList items={items} />
+      <BookList items={items} onDeleteItem={onDeleteItem} />
     </Container>
   );
 };
