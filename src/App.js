@@ -30,11 +30,12 @@ function App() {
     }, 1000);
   };
 
-  const deleteItemHandler = deleteItemId => {
-    console.log(deleteItemId, 'deleteItemId');
+  // delete function
+  const deleteItemHandler = itemId => {
+    console.log(itemId, 'itemId to be deleted');
 
     setBooks(prevBooks => {
-      const updatedBooks = prevBooks.filter(x => x.id !== deleteItemId);
+      const updatedBooks = prevBooks.filter(item => item.id !== itemId);
 
       return updatedBooks;
     });
@@ -75,7 +76,8 @@ function App() {
               <Books
                 items={filteredBooks}
                 handleChange={handleChange}
-                onDeleteItem={deleteItemHandler}
+                books={books}
+                deleteItemHandler={deleteItemHandler}
               />
             }
           />

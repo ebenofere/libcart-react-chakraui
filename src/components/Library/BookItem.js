@@ -14,8 +14,28 @@ import {
 } from '@chakra-ui/react';
 import ButtonBar from '../ButtonBar';
 
-const BookItem = ({ items, onDelete }) => {
+const BookItem = ({ items, books, deleteItemHandler }) => {
   console.log(items, 'items');
+
+  // const deleteItemHandler = deleteItemId => {
+  //   console.log(deleteItemId, 'deleteItemId');
+
+  //   setBooks(prevBooks => {
+  //     const updatedBooks = prevBooks.filter(x => x.id !== deleteItemId);
+
+  //     return updatedBooks;
+  //   });
+  // };
+
+  //Delete function
+  // const deleteHandler = (itemId) => {
+  //   console.log(itemId, "item id delete");
+  //   setList((prevList) => {
+  //     const updatedList = prevList.filter((item) => item.id !== itemId);
+
+  //     return updatedList;
+  //   });
+  // };
 
   if (items.length === 0) {
     return (
@@ -26,10 +46,6 @@ const BookItem = ({ items, onDelete }) => {
       </Box>
     );
   }
-
-  const deleteItemHandler = props => {
-    onDelete(props.id);
-  };
 
   return (
     <Box>
@@ -50,7 +66,7 @@ const BookItem = ({ items, onDelete }) => {
                 <ButtonBar
                   btnTitle="Delete Item"
                   bgBtnColor="#DF6C5E"
-                  whatToDo={deleteItemHandler}
+                  whatToDo={() => deleteItemHandler(item.id)}
                 />
                 <ButtonBar btnTitle="View/Edit Item" bgBtnColor="teal.500" />
               </Flex>
