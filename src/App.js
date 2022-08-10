@@ -39,6 +39,10 @@ function App() {
 
       return updatedBooks;
     });
+
+    // setTimeout(() => {
+    //   navigate('/library');
+    // }, 5000);
   };
 
   const handleChange = e => {

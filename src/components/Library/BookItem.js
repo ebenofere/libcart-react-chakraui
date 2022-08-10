@@ -12,30 +12,11 @@ import {
   Divider,
   Center,
 } from '@chakra-ui/react';
+import DeleteButton from './DeleteButton';
 import ButtonBar from '../ButtonBar';
 
 const BookItem = ({ items, books, deleteItemHandler }) => {
   console.log(items, 'items');
-
-  // const deleteItemHandler = deleteItemId => {
-  //   console.log(deleteItemId, 'deleteItemId');
-
-  //   setBooks(prevBooks => {
-  //     const updatedBooks = prevBooks.filter(x => x.id !== deleteItemId);
-
-  //     return updatedBooks;
-  //   });
-  // };
-
-  //Delete function
-  // const deleteHandler = (itemId) => {
-  //   console.log(itemId, "item id delete");
-  //   setList((prevList) => {
-  //     const updatedList = prevList.filter((item) => item.id !== itemId);
-
-  //     return updatedList;
-  //   });
-  // };
 
   if (items.length === 0) {
     return (
@@ -63,10 +44,10 @@ const BookItem = ({ items, books, deleteItemHandler }) => {
                     borderRadius="md"
                   />
                 </Box>
-                <ButtonBar
+                <DeleteButton
                   btnTitle="Delete Item"
                   bgBtnColor="#DF6C5E"
-                  whatToDo={() => deleteItemHandler(item.id)}
+                  deleteItem={() => deleteItemHandler(item.id)}
                 />
                 <ButtonBar btnTitle="View/Edit Item" bgBtnColor="teal.500" />
               </Flex>
