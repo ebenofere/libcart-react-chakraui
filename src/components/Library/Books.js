@@ -6,6 +6,7 @@ import {
   VStack,
   Input,
   Button,
+  Stack,
   Flex,
   Spacer,
   Icon,
@@ -27,7 +28,7 @@ const Books = ({ items, handleChange, onDeleteItem }) => {
         <Text fontWeight="600" fontSize="xl">
           Search for Books
         </Text>
-        <Box mt={4}>
+        <Stack mt={4}>
           <Flex direction="column">
             <SearchBox mb={2} handleChange={handleChange} />
             <Text as="em" fontSize="xs" color="#999999" mt={2}>
@@ -37,7 +38,7 @@ const Books = ({ items, handleChange, onDeleteItem }) => {
               <ButtonBar btnTitle="Search" bgBtnColor="teal.500" />
             </Box>
           </Flex>
-        </Box>
+        </Stack>
       </Box>
       <Heading fontWeight="600" fontSize="3xl" mb={2} color="#03151E">
         Results

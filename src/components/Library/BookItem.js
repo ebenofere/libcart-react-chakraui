@@ -34,7 +34,7 @@ const BookItem = ({ items, onDelete }) => {
   return (
     <Box>
       {items.map(item => (
-        <Box w="100%" p={4} key={item.id}>
+        <Stack w="100%" p={4} key={item.id}>
           <Flex>
             <Box flex="1" mx={4} pr={4}>
               <Flex direction="column" gap={4}>
@@ -80,7 +80,7 @@ const BookItem = ({ items, onDelete }) => {
             </Box>
           </Flex>
           <Divider orientation="horizontal" color="black" mt={12} />
-        </Box>
+        </Stack>
       ))}
     </Box>
   );

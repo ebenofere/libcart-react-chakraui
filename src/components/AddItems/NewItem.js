@@ -65,6 +65,19 @@ const NewItem = ({ onSubmitBookItem }) => {
   const submitHandler = event => {
     event.preventDefault();
 
+    if (
+      enteredTitle.trim().length == '' ||
+      enteredAuthor.trim().length == '' ||
+      enteredYear.trim().length == '' ||
+      enteredPages.trim().length == '' ||
+      enteredPublisher.trim().length == '' ||
+      enteredISBN.trim().length == '' ||
+      enteredDescription.trim().length == ''
+    ) {
+      alert('Complete these fields');
+      return;
+    }
+
     const addedBookData = {
       itemName: enteredTitle,
       itemAuthor: enteredAuthor,
