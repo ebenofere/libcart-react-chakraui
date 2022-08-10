@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Grid, GridItem } from '@chakra-ui/react';
+import { Grid, GridItem, useToast } from '@chakra-ui/react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 
 import { bookList, booksNoEachMonth } from './store';
@@ -18,6 +18,7 @@ function App() {
   const [searchField, setSearchField] = useState('');
 
   const navigate = useNavigate();
+  const toast = useToast();
 
   const addItemHandler = newItem => {
     console.log(newItem, 'newItem');
@@ -34,15 +35,26 @@ function App() {
   const deleteItemHandler = itemId => {
     console.log(itemId, 'itemId to be deleted');
 
-    setBooks(prevBooks => {
-      const updatedBooks = prevBooks.filter(item => item.id !== itemId);
+    // setBooks(prevBooks => {
+    //   const updatedBooks = prevBooks.filter(item => item.id !== itemId);
 
-      return updatedBooks;
+    //   return updatedBooks;
+    // });
+
+    const updatedBooks = [...books].filter(item => item.id !== itemId);
+
+    setBooks(updatedBooks);
+
+    toast({
+      title: 'Success!',
+      description: 'This book item has been deleted.',
+      position: 'top-right',
+      variant: 'subtle',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+      color: 'white',
     });
-
-    // setTimeout(() => {
-    //   navigate('/library');
-    // }, 5000);
   };
 
   const handleChange = e => {

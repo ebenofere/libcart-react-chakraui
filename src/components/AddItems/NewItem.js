@@ -13,6 +13,7 @@ import {
   Text,
   Button,
   Container,
+  useToast,
 } from '@chakra-ui/react';
 import { MdCloudUpload } from 'react-icons/md';
 
@@ -26,6 +27,9 @@ const NewItem = ({ onSubmitBookItem }) => {
   const [enteredPublisher, setEnteredPublisher] = useState('');
   const [enteredISBN, setEnteredISBN] = useState('');
   const [enteredDescription, setEnteredDescription] = useState('');
+  const [showEmptyAlert, setShowEmptyAlert] = useState('');
+
+  const toast = useToast();
 
   const titleChangeHandler = event => {
     console.log(event.target.value, 'titlechangehandler');
@@ -74,7 +78,17 @@ const NewItem = ({ onSubmitBookItem }) => {
       enteredISBN.trim().length == '' ||
       enteredDescription.trim().length == ''
     ) {
-      alert('Complete these fields');
+      toast({
+        title: 'Incomplete fields!',
+        description: 'Please complete the fields.',
+        position: 'top-right',
+        variant: 'subtle',
+        status: 'warning',
+        color: 'white',
+        duration: 9000,
+        isClosable: true,
+      });
+
       return;
     }
 
@@ -91,6 +105,17 @@ const NewItem = ({ onSubmitBookItem }) => {
     console.log(addedBookData, 'added bookdata');
 
     onSubmitBookItem(addedBookData);
+
+    toast({
+      title: 'New Book Item Added.',
+      description: "We've created your account for you.",
+      position: 'top-right',
+      variant: 'subtle',
+      status: 'success',
+      duration: 9000,
+      isClosable: true,
+      color: 'white',
+    });
   };
 
   return (
