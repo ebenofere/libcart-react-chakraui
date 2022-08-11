@@ -27,7 +27,6 @@ const NewItem = ({ onSubmitBookItem }) => {
   const [enteredPublisher, setEnteredPublisher] = useState('');
   const [enteredISBN, setEnteredISBN] = useState('');
   const [enteredDescription, setEnteredDescription] = useState('');
-  const [showEmptyAlert, setShowEmptyAlert] = useState('');
 
   const toast = useToast();
 

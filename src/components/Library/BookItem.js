@@ -21,15 +21,20 @@ import {
   useDisclosure,
   Button,
 } from '@chakra-ui/react';
-import Lorem from 'react-lorem-component';
 
 import DeleteButton from './DeleteButton';
 import ButtonBar from '../ButtonBar';
-import EditBooks from './EditBooks';
+import EditDrawer from './EditDrawer';
 
 const BookItem = ({ items, books, deleteItemHandler }) => {
   console.log(items, 'items');
+  const [size, setSize] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
+
+  const handleClick = md => {
+    setSize('md');
+    onOpen();
+  };
 
   const editItemHandler = () => {
     console.log('amin!');
@@ -69,7 +74,7 @@ const BookItem = ({ items, books, deleteItemHandler }) => {
                 <ButtonBar
                   btnTitle="View/Edit Item"
                   bgBtnColor="teal.500"
-                  whatToDo={onOpen}
+                  whatToDo={() => handleClick('md')}
                 />
               </Flex>
             </Box>
@@ -98,23 +103,7 @@ const BookItem = ({ items, books, deleteItemHandler }) => {
             </Box>
           </Flex>
 
-          <Modal isOpen={isOpen} onClose={onClose}>
-            <ModalOverlay />
-            <ModalContent>
-              <ModalHeader>Edit Book Item</ModalHeader>
-              <ModalCloseButton />
-              <ModalBody>
-                <Lorem count={2} />
-              </ModalBody>
-
-              <ModalFooter>
-                <Button colorScheme="blue" mr={3} onClick={onClose}>
-                  Close
-                </Button>
-                <Button variant="ghost">Update</Button>
-              </ModalFooter>
-            </ModalContent>
-          </Modal>
+          <EditDrawer isOpen={isOpen} onClose={onClose} />
           <Divider orientation="horizontal" color="black" mt={12} />
         </Stack>
       ))}
