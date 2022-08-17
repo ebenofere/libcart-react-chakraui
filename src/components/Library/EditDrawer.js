@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
   Drawer,
   DrawerBody,
@@ -28,14 +28,16 @@ import { MdCloudUpload } from 'react-icons/md';
 
 import ButtonBar from '../ButtonBar';
 
-const EditDrawer = ({ isOpen, onClose }) => {
+const EditDrawer = ({ isOpen, onClose, item, editItemHandler }) => {
   const [enteredTitle, setEnteredTitle] = useState('');
   const [enteredAuthor, setEnteredAuthor] = useState('');
-  const [enteredYear, setEnteredYear] = useState('');
-  const [enteredPages, setEnteredPages] = useState('');
+  const [enteredYear, setEnteredYear] = useState(0);
+  const [enteredPages, setEnteredPages] = useState(0);
   const [enteredPublisher, setEnteredPublisher] = useState('');
-  const [enteredISBN, setEnteredISBN] = useState('');
+  const [enteredISBN, setEnteredISBN] = useState(0);
   const [enteredDescription, setEnteredDescription] = useState('');
+
+  console.log(item, 'itemeditdrawer C');
 
   const toast = useToast();
 
@@ -73,6 +75,18 @@ const EditDrawer = ({ isOpen, onClose }) => {
     console.log(event.target.value, 'descriptionChangeHandler');
     setEnteredDescription(event.target.value);
   };
+
+  useEffect(() => {
+    if (item.id) {
+      setEnteredTitle(item.itemName);
+      setEnteredAuthor(item.itemAuthor);
+      setEnteredYear(item.itemPublishedYear);
+      setEnteredPages(item.itemTotalPages);
+      setEnteredPublisher(item.itemPublisher);
+      setEnteredISBN(item.ISBN);
+      setEnteredDescription(item.itemDescription);
+    }
+  }, [item]);
 
   const submitHandler = event => {
     event.preventDefault();
@@ -114,37 +128,49 @@ const EditDrawer = ({ isOpen, onClose }) => {
                   <GridItem>
                     <FormControl>
                       <FormLabel>Title</FormLabel>
-                      <Input onChange={titleChangeHandler} />
+                      <Input
+                        value={enteredTitle}
+                        onChange={titleChangeHandler}
+                      />
                     </FormControl>
                   </GridItem>
                   <GridItem>
                     <FormControl>
                       <FormLabel>Author</FormLabel>
-                      <Input onChange={authorChangeHandler} />
+                      <Input
+                        value={enteredAuthor}
+                        onChange={authorChangeHandler}
+                      />
                     </FormControl>
                   </GridItem>
                   <GridItem>
                     <FormControl>
                       <FormLabel>Year Published</FormLabel>
-                      <Input onChange={yearChangeHandler} />
+                      <Input value={enteredYear} onChange={yearChangeHandler} />
                     </FormControl>
                   </GridItem>
                   <GridItem>
                     <FormControl>
                       <FormLabel>No. of Pages</FormLabel>
-                      <Input onChange={pagesChangeHandler} />
+                      <Input
+                        value={enteredPages}
+                        onChange={pagesChangeHandler}
+                      />
                     </FormControl>
                   </GridItem>
                   <GridItem>
                     <FormControl>
                       <FormLabel>Publisher</FormLabel>
-                      <Input onChange={publisherChangeHandler} />
+                      <Input
+                        value={enteredPublisher}
+                        onChange={publisherChangeHandler}
+                      />
                     </FormControl>
                   </GridItem>
                   <GridItem>
                     <FormControl>
                       <FormLabel>ISBN No.</FormLabel>
-                      <Input onChange={ISBNChangeHandler} />
+                      <Input value={enteredISBN} onChange={ISBNChangeHandler} />
                     </FormControl>
                   </GridItem>
                 </Grid>
@@ -153,13 +179,29 @@ const EditDrawer = ({ isOpen, onClose }) => {
                 <Flex direction="column" gap={8} mb={8}>
                   <Textarea
                     mt={8}
+                    resize="vertical"
                     placeholder="Write description here..."
+                    value={enteredDescription}
                     onChange={descriptionChangeHandler}
                   />
                   <ButtonBar
-                    btnTitle="Add Book"
+                    btnTitle="Update Book Item"
                     bgBtnColor="teal.500"
-                    whatToDo={submitHandler}
+                    whatToDo={() => {
+                      editItemHandler({
+                        id: item.id,
+                        ISBN: enteredISBN,
+                        itemName: enteredTitle,
+                        itemAuthor: enteredAuthor,
+                        itemTotalPages: enteredPages,
+                        itemPublishedYear: enteredYear,
+                        itemPublisher: enteredPublisher,
+                        itemDateAdded: item.itemDateAdded,
+                        itemImage: item.itemImage,
+                        itemDescription: enteredDescription,
+                      });
+                      onClose();
+                    }}
                   />
                 </Flex>
                 <Flex direction="column">

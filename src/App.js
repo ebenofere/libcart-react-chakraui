@@ -31,6 +31,15 @@ function App() {
     }, 1000);
   };
 
+  const editItemHandler = item => {
+    console.log(item, 'item edithandler lolu');
+    const updatedBooks = [...books];
+    const itemIndex = updatedBooks.findIndex(el => el.id === item.id);
+    updatedBooks[itemIndex] = item;
+
+    setBooks(updatedBooks);
+  };
+
   // delete function
   const deleteItemHandler = itemId => {
     console.log(itemId, 'itemId to be deleted');
@@ -93,6 +102,7 @@ function App() {
                 items={filteredBooks}
                 handleChange={handleChange}
                 books={books}
+                editItemHandler={editItemHandler}
                 deleteItemHandler={deleteItemHandler}
               />
             }

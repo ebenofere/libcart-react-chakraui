@@ -20,7 +20,13 @@ import SearchBox from '../SearchBox/SearchBox';
 import ContainerHeader from '../ContainerHeader';
 import ButtonBar from '../ButtonBar';
 
-const Books = ({ items, books, deleteItemHandler, handleChange }) => {
+const Books = ({
+  items,
+  books,
+  editItemHandler,
+  deleteItemHandler,
+  handleChange,
+}) => {
   return (
     <Container maxW="6xl" bg="white">
       <ContainerHeader pageTitle="Library" tabOne="" />
@@ -46,6 +52,7 @@ const Books = ({ items, books, deleteItemHandler, handleChange }) => {
       <BookList
         items={items}
         books={books}
+        editItemHandler={editItemHandler}
         deleteItemHandler={deleteItemHandler}
       />
     </Container>

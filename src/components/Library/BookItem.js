@@ -26,18 +26,15 @@ import DeleteButton from './DeleteButton';
 import ButtonBar from '../ButtonBar';
 import EditDrawer from './EditDrawer';
 
-const BookItem = ({ items, books, deleteItemHandler }) => {
+const BookItem = ({ items, editItemHandler, deleteItemHandler }) => {
   console.log(items, 'items');
-  const [size, setSize] = useState('');
+  const [selectedItem, setSelectedItem] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const handleClick = md => {
-    setSize('md');
+  const handleClick = payload => {
+    console.log(payload, 'pay load');
+    setSelectedItem(payload);
     onOpen();
-  };
-
-  const editItemHandler = () => {
-    console.log('amin!');
   };
 
   if (items.length === 0) {
@@ -74,7 +71,7 @@ const BookItem = ({ items, books, deleteItemHandler }) => {
                 <ButtonBar
                   btnTitle="View/Edit Item"
                   bgBtnColor="teal.500"
-                  whatToDo={() => handleClick('md')}
+                  whatToDo={() => handleClick(item)}
                 />
               </Flex>
             </Box>
@@ -103,7 +100,12 @@ const BookItem = ({ items, books, deleteItemHandler }) => {
             </Box>
           </Flex>
 
-          <EditDrawer isOpen={isOpen} onClose={onClose} />
+          <EditDrawer
+            isOpen={isOpen}
+            onClose={onClose}
+            item={selectedItem}
+            editItemHandler={editItemHandler}
+          />
           <Divider orientation="horizontal" color="black" mt={12} />
         </Stack>
       ))}
